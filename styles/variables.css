@@ -3,7 +3,7 @@
   и их переопределение под различные устройства
 */
 :root {
-  --font-family: 'IBM Plex mono', monospace;
+  --font-family: "IBM Plex mono", monospace;
   --font-weight: 400;
   --font-weight-b: 700;
   --font-size: 18px;
@@ -22,7 +22,7 @@
   --hover-color: rgba(255, 0, 112, 0.6);
   --title-color: #db00ff;
   --subtitle-color: #000028;
-  --title-shadow-color: #ff0070; 
+  --title-shadow-color: #ff0070;
 }
 
 @media (width >=768px) {
@@ -34,7 +34,7 @@
     --gallery-gap: 20px;
     --padding-inline: 10px;
     --margin: 10px;
-    --font-family:'IBM Plex mono', monospace;
+    --font-family: "IBM Plex mono", monospace;
     --font-weight-b: 700;
     --font-size: 18px;
     --margin-top: 5px;
@@ -46,7 +46,7 @@
     --padding: 10px;
     --title-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     --font-weight-b: 700;
-    --font-family: 'IBM Plex mono', monospace;
+    --font-family: "IBM Plex mono", monospace;
     --font-size: 18px;
     --margin: 10px;
     --padding-top: 5px;
