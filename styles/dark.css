@@ -5,9 +5,9 @@
 */
 
 :root.theme-dark {
-  --font-family: 'IBM Plex mono', sans-serif;
+  --font-family: "IBM Plex mono", sans-serif;
   --font-weight: 400;
-  --font-weight-b: 700; 
+  --font-weight-b: 700;
   --font-size: 18px;
   --content-padding: 10px;
   --main-margin: 40px;
@@ -22,7 +22,7 @@
   --hover-color: rgba(255, 0, 112, 0.6);
   --title-color: #db00ff;
   --subtitle-color: #000028;
-  --title-shadow-color: #ff0070; 
+  --title-shadow-color: #ff0070;
 }
 
 .theme-dark .record {

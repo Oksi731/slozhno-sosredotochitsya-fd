@@ -13,7 +13,7 @@
   background-size: cover;
   background-attachment: fixed;
   inline-size: 100%;
-  background-color: black;
+  background-color: var(--bg-main-color);
 }
 
 .header {
@@ -316,9 +316,8 @@ img {
   }
 
   .content {
-    padding: 0 10px 0 10px;
     min-width: 768px;
-    margin-block-start: 40px;
+    margin: 40px 10px 0 10px;
   }
 
   .decorated-zone::after {
