@@ -1,13 +1,12 @@
 .page {
+  background-image: var(--bg-image);
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-main-color);
 }
 
 .header {
-  background-image: var(--bg-image);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
   block-size: 100vh;
   min-block-size: 668px;
   display: grid;
