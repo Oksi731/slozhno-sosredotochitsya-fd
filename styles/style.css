@@ -1,19 +1,10 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-/* основная ширина экрана*/
-/*медиавыражения под разные экраны*/
-/*использование переменных*/
-
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен,
-  чтобы составлять селекторы для разных цветовых тем. */
-  /*background-color: var(--bg-main-color);*/
   background-image: var(--bg-image);
-  background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  inline-size: 100%;
   background-color: var(--bg-main-color);
+  inline-size: 100%;
 }
 
 .header {
@@ -21,30 +12,35 @@
   block-size: 100vh;
   display: grid;
   grid-template-rows: 1fr min-content 1fr;
-  padding-inline: 10px;
-}
-
-.decorated-zone {
+  justify-items: end;
   position: relative;
+  align-items: center;
+  padding: var(--content-padding);
 }
 
-.decorated-zone::before,
-.decorated-zone::after {
-  content: "";
-  position: absolute;
-  display: inline-block;
-  inline-size: 25px;
-  block-size: 25px;
-}
+/* .decorated-zone {  */
+   /* position: relative;  */
+/* }  */
+/*  */
 
 .decorated-zone::before {
+  content: "";
   border-inline-end: 1px solid var(--nav-color);
   border-block-start: 1px solid var(--nav-color);
   inset-block-start: var(--content-padding);
   inset-inline-end: var(--content-padding);
+  position: absolute;
+  /* display: inline-block; */
+  inline-size: 25px;
+  block-size: 25px;
 }
 
 .decorated-zone::after {
+  content: "";
+  position: absolute;
+  display: inline-block; 
+  inline-size: 25px;
+  block-size: 25px;
   border-inline-start: 1px solid var(--nav-color);
   border-block-end: 1px solid var(--nav-color);
   inset-block-end: var(--content-padding);
@@ -53,7 +49,7 @@
 
 .record {
   position: absolute;
-  justify-content: end;
+  justify-content: end; 
   color: var(--accent-color);
   font-family: var(--font-family);
   font-weight: var(--font-weight);
@@ -61,8 +57,8 @@
   line-height: 25px;
   text-transform: uppercase;
   inset-block-start: var(--content-padding);
-  inset-inline-end: calc(9px+var(--content-padding));
-  right: 39px;
+  inset-inline-end: calc(9px + var(--content-padding));
+  right: 39px; 
 }
 
 .record::after {
@@ -71,25 +67,22 @@
   display: block;
   inline-size: 9px;
   block-size: 9px;
-  border-radius: 100%;
+  border-radius: 50%;
   box-shadow: 0 0 4px 2px var(--accent-color);
   background-color: var(--accent-color);
-  margin-left: 43px;
-  margin-block-start: -18px;
+  margin: -17px 0 0 44px; 
 }
 
 .header__theme-menu {
-  display: flex;
-  justify-self: end;
-  align-items: center;
-  margin-block-start: 10px;
+   /* display: flex;  */
+   /* justify-self: end;  */
+  /* align-items: center;  */
+  /* margin: 0px 10px -15px 0px; */
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 10px;
   line-height: 18px;
   font-size: var(--font-size);
@@ -98,8 +91,7 @@
 
 .header__theme-menu-button {
   border: none;
-  padding-block-end: 4px;
-  min-inline-size: 70px;
+  min-inline-size: 70px; 
   min-block-size: 26px;
   color: var(--nav-color);
   font-family: var(--font-family);
@@ -110,7 +102,7 @@
   text-align: center;
   text-transform: lowercase;
   background-color: transparent;
-  cursor: pointer;
+  cursor: pointer  
 }
 
 .header__theme-menu-button:hover {
@@ -134,9 +126,11 @@
   color: var(--title-color);
   font-family: var(--font-family);
   font-weight: var(--font-weight-b);
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--title-size);
   text-shadow: 4px 4px 0 var(--title-shadow-color);
-  line-height: 83%;
+  line-height: 82.5%;
+  justify-self: start;
+  padding: var(--content-padding);
 }
 
 .title-decor {
@@ -144,12 +138,11 @@
   color: var(--subtitle-color);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background: var(--accent-color);
+  background-color: var(--accent-color);
 }
 
 .header .title-decor {
-  margin-block-start: 55px;
-  margin-block-end: 65px;
+ margin: -21px 10px 0px 10px;
 }
 
 .content_section {
@@ -256,8 +249,10 @@ img {
   align-items: center;
   margin-block-start: 40px;
   block-size: 100vh;
-  padding-left: 10px;
-  padding-right: 10px;
+  /* padding-left: va; */
+  /* padding-right: 10px; */
+  position: relative;
+  padding: var(--content-padding);
 }
 
 .gallery .title-decor {
@@ -275,44 +270,45 @@ img {
 
 @media (width >=768px) {
   .page {
-    min-width: 768px;
+    /* min-width: 768px; */
   }
 
   .header {
-    min-height: 1024px;
+    /* min-height: 1024px; */
+    /* padding: 20px; */
   }
 
   .decorated-zone::before {
-    margin: 10px 10px;
+    /* margin: 10px 10px; */
   }
 
-  .record {
-    margin: 10px 9px 0px 0px;
-  }
+  /* .record { */
+    /* margin: 10px 9px 0px 0px; */
+  /* } */
 
   .record::after {
-    margin-left: 44px;
-    margin-block-start: -17px;
+    /* margin-left: 44px; */
+    /* margin-block-start: -17px; */
   }
 
   .header__theme-menu {
-    margin: 10px 10px -8px;
+    /* margin: 10px 10px -8px; */
   }
 
   .header__title {
     font-size: var(--title-size);
-    margin-inline-start: -10px;
-    font-weight: var(--font-weight-b);
-    font-family: var(--font-family);
+    margin-inline-start: -20px;
+    position: relative;
   }
 
-  .header .title-decor {
-    position: relative;
-    align-self: center;
-    justify-self: end;
-    width: 364px;
-    right: 10px;
-    margin-block-start: 44px;
+  .title-decor {
+    /* position: relative; */
+    /* align-self: center; */
+    /* justify-self: end; */
+    /* width: 364px; */
+    /* right: 10px; */
+    /* margin-block-start: 44px; */
+    inline-size: 50%;
   }
 
   .content {
@@ -431,7 +427,7 @@ img {
 
   .footer_title {
     justify-content: center;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--title-size);
     margin-inline-end: 3px;
   }
 }
