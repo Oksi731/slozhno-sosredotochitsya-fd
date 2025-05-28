@@ -1,5 +1,5 @@
 .page {
-  background-attachment: fixed; 
+  background-attachment: fixed;
   background-color: var(--bg-main-color);
 }
 
@@ -64,7 +64,6 @@
   inset-inline-end: -61%;
   inset-block-start: 31%;
 }
-
 
 .header__theme-menu-list {
   display: flex;
