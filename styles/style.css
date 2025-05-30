@@ -4,6 +4,7 @@
   background-size: cover;
   background-attachment: fixed;
   background-color: var(--bg-main-color);
+  font-family: var(--font-family);
 }
 
 .header {
@@ -112,39 +113,45 @@
 }
 .header__text {
   font-weight: var(--font-weight-b);
-  color: var(--subtitle-color);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: var(--accent-color);
 }
+
 .title-decor {
-  font-weight: var(--font-weight-b);
   color: var(--subtitle-color);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
   background-color: var(--accent-color);
 }
 
-.content_section {
-  margin: 60px 10px 0px 10px;
+.content {
+  padding: calc(4 * var(--content-padding)) var(--content-padding);
+  line-height: var(--line-height);
+  font-size: var(--font-size);
 }
 
-.content .title-decor {
-  margin-block-start: 55px;
+.content_section:not(:last-of-type) {
+  margin-block-end: var(--section-gap);
 }
 
-article {
-  margin-block-start: -35px;
-  text-decoration: none;
-  min-height: 314px;
+.heading_text {
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+}
+
+.heading_text-sub {
+  font-weight: var(--font-weight);
+  margin-block-start: 20px;
 }
 
 .content_title {
   color: var(--content-title-color);
   font-weight: var(--font-weight-b);
   font-size: var(--font-size);
-  line-height: 130%;
-  margin: -20px 0px 0px 0px;
+  line-height: var(--line-height);
+  margin-block-end: 20px;
+}
+
+.text-content {
+  margin-block-start: 20px;
 }
 
 .text_selection {
@@ -164,32 +171,6 @@ article {
   border: 1px solid var(--content-text-color);
 }
 
-.help {
-  margin: 70px 10px 40px 10px;
-}
-
-.content_information {
-  margin-block-start: -35px;
-}
-.how {
-  margin-block-start: 70px;
-}
-.how .title-decor {
-  margin-block-start: 20px;
-}
-
-h3 {
-  font-family: var(--font-family);
-  font-weight: var(--font-weight-b);
-  font-size: var(--title-size);
-  line-height: var(--line-height);
-}
-
-.list-title .content_text {
-  line-height: 130%;
-  margin-block-start: -14px;
-}
-
 .content_text {
   color: var(--content-text-color);
   font-weight: var(--font-weight);
@@ -198,21 +179,13 @@ h3 {
   margin-block-start: 10px;
 }
 
-.list-title .title-decor {
-  font-family: var(--font-family);
-  font-style: normal;
-  font-weight: var(--font-weight);
+.gallery__heading {
   font-size: var(--font-size);
-  line-height: 23.4px;
+  line-height: var(--line-height);
+  margin-block-end: var(--content-padding);
 }
 
-.gallery {
-  display: grid;
-  flex-direction: column;
-  margin: 0 10px 0 10px;
-}
-
-img {
+.gallery_item {
   width: 100%;
 }
 
@@ -226,14 +199,9 @@ img {
   display: grid;
   justify-items: center;
   align-items: center;
-  margin-block-start: 40px;
   block-size: 100vh;
   position: relative;
   padding: var(--content-padding);
-}
-
-.gallery .title-decor {
-  margin: 50px 0px 10px 0px;
 }
 
 .footer_title {
@@ -246,12 +214,7 @@ img {
 }
 
 @media (width >=768px) {
-  .header {
-    min-height: 1024px;
-  }
-
   .header__title {
-    font-size: var(--title-size);
     margin-inline-start: -20px;
     position: relative;
   }
@@ -261,80 +224,40 @@ img {
   }
 
   .content {
-    min-width: 768px;
-    margin: 40px 10px 0 10px;
-  }
-
-  .content_title {
-    margin-block-start: 21px;
-    width: 236px;
+    padding: calc(3 * var(--content-padding)) var(--content-padding);
   }
 
   .content_section {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-column-gap: 15px;
-    margin-block-start: 40px;
+    grid-template-columns: 1fr 2fr;
+    gap: var(--content-padding);
+  }
+  .content_title {
+    margin-block-start: 0;
   }
 
-  .content_section .content_title {
-    height: 70px;
-    margin-block-start: 20px;
-  }
-
-  article {
-    grid-column-start: 2;
-    min-height: 314px;
-    width: 472px;
-  }
-  .information {
-    margin-inline-end: 20px;
-  }
-  .content_information {
-    min-height: 141px;
-  }
-  .content_information .title-decor {
-    justify-self: start;
-    width: 728px;
-  }
-
-  .content_information .content_text {
-    min-height: 141px;
+  .content_section .text-content:first-of-type {
+    margin-block-start: 0;
   }
 
   .help {
-    grid-column-start: 1;
-    margin-block-start: 80px;
+    grid-template-columns: 1fr;
   }
 
   .help .content_title {
     width: 130px;
-  }
-
-  .how {
-    margin-block-start: 59px;
-    width: 236px;
-  }
-
-  .card_list {
-    width: 472px;
+    margin-block-end: 0;
   }
 
   .gallery {
-    margin-block-start: 34px;
+    grid-template-columns: 1fr;
   }
-
-  .gallery .title-decor {
-    margin: 45px 0px 10px 0px;
-    width: 728px;
+  .gallery__heading {
+    margin-block-end: 0;
   }
 
   .gallery_items {
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    box-sizing: border-box;
-    height: auto;
-    margin: 8px 20px 0px 0px;
   }
 
   .gallery_item {
@@ -362,11 +285,6 @@ img {
     grid-column: 2 / 4;
     grid-row: 3;
   }
-
-  .footer {
-    min-height: 1024px;
-    margin-block-start: 60px;
-  }
 }
 
 @media (width >= 1024px) {
@@ -382,75 +300,28 @@ img {
   .header__theme-menu-list {
     flex-direction: row;
   }
-
-  .content_section {
+  .content_block {
     display: grid;
-    grid-template-columns: 314.96px 1fr;
-    grid-column-gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--content-padding);
   }
-
-  .content_section .content_title {
-    width: 314.96px;
-    margin-block-start: 20px;
+  .content_block .text-content {
+    margin: 0;
   }
-  .content .title-decor {
-    width: 649px;
+  .content_section {
+    grid-template-columns: 32% 66%;
   }
-
-  article {
-    grid-column-start: 2;
-    min-height: 244px;
-    width: 648.92px;
-  }
-
-  .help {
-    min-height: 498px;
-    margin-block-start: 42px;
+  .help,
+  .gallery {
+    grid-template-columns: 1fr;
   }
 
   .help .content_title {
     width: 315px;
-    margin-block-start: 80px;
   }
 
-  .information {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    height: 431px;
-    margin-block-start: -54px;
-  }
-
-  .content_information {
-    margin-block-start: 19px;
-    width: 315px;
-  }
-
-  .content_information .title-decor {
-    width: 315px;
-  }
-
-  .how {
-    min-height: 498px;
-  }
-
-  .how .content_title {
-    margin-block-start: 22px;
-  }
-
-  .list-title {
-    width: 649px;
-  }
-
-  .gallery {
-    margin-block-start: 35px;
-  }
-  .gallery .title-decor {
-    width: 984px;
-  }
-
-  .gallery_items {
-    margin: 8px -2px 1px 4px;
+  .how .content_block {
+    grid-template-columns: 1fr;
   }
 
   .footer {
