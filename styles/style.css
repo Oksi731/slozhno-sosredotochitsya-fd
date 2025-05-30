@@ -91,7 +91,7 @@
 }
 
 .header__theme-menu-button:focus {
-  border: 1px solid transparent;
+  outline: none;
 }
 
 .header__theme-menu-button:focus-visible {
@@ -186,7 +186,10 @@
 }
 
 .gallery_item {
-  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  inline-size: 100%;
+  block-size: 100%;
 }
 
 .gallery_items {
@@ -258,13 +261,6 @@
 
   .gallery_items {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .gallery_item {
-    object-fit: cover;
-    object-position: center;
-    inline-size: 100%;
-    block-size: 100%;
   }
 
   .sunset {
