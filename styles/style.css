@@ -168,7 +168,7 @@
 }
 
 .text_selection:focus-visible {
-  border: 1px solid var(--content-text-color);
+  outline: 1px solid var(--content-text-color);
 }
 
 .content_text {
